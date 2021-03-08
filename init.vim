@@ -1,6 +1,6 @@
 syntax on
 
-set notermguicolors
+set termguicolors
 set smarttab
 set cindent
 set expandtab
@@ -44,15 +44,18 @@ Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 " Available color schemes: sonokai gruvbox-material onedark gruvbox
-colorscheme sonokai
+colorscheme onedark
 
 
 
 vmap ++ <plug>NERDCommenterToggle
 nmap ++ <plug>NERDCommenterToggle
 
+" Themes luna gruvbox_material bubblegum minimalist raven ravenpower solarized
 let g:airline_solarized_bg='dark'
-let g:airline_theme='sonokai'
+let g:airline_theme='gruvbox_material'
+let g:airline_powerline_fonts = 1
+"let g:airline#extensions#tabline#enabled = 1
 
 
 " coc config
@@ -67,14 +70,12 @@ let g:coc_global_extensions = [
   \ ]
 
 
-
 " Mappings
 inoremap ( ()<left>
 inoremap { {}<left>
 inoremap [ []<left>
 inoremap " ""<left>
 inoremap ' ''<left>
-"inoremap < <><left>
 inoremap {<CR> {<CR>}<Esc><S-o>
 inoremap <silent><expr> <c-space> coc#refresh()
 
@@ -83,8 +84,8 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
-nnoremap <silent> K :call <SID>show_documentation()<CR>
 " Shows documentation in floating state
+nnoremap <silent> K :call <SID>show_documentation()<CR>
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
     execute 'h '.expand('<cword>')
@@ -95,9 +96,6 @@ endfunction
 
 nnoremap <silent> <space>a  :<C-u>CocList diagnostics<cr>
 nnoremap <silent> <space>e  :<C-u>CocList extensions<cr>
-nnoremap <silent> <space>c  :<C-u>CocList commands<cr>
-nnoremap <silent> <space>o  :<C-u>CocList outline<cr>
-nnoremap <silent> <space>s  :<C-u>CocList -I symbols<cr>
 nnoremap <silent> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
