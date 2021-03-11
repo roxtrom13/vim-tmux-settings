@@ -1,6 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =4
-let g:netrw_dirhist_4='/home/mart/practice/node/band_names_server'
-let g:netrw_dirhist_3='/home/roier'
-let g:netrw_dirhist_2='/home/roier/golib/src'
-let g:netrw_dirhist_1='/home/roier/golib/src/goAPI'
