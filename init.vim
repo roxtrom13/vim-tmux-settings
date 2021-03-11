@@ -69,14 +69,14 @@ let g:coc_global_extensions = [
   \ 'coc-emmet',
   \ ]
 
-
 " Mappings
+inoremap {{ {{  }}<left><left><left>
+inoremap {<CR> {<CR>}<Esc><S-o>
 inoremap ( ()<left>
 inoremap { {}<left>
 inoremap [ []<left>
 inoremap " ""<left>
 inoremap ' ''<left>
-inoremap {<CR> {<CR>}<Esc><S-o>
 inoremap <silent><expr> <c-space> coc#refresh()
 
 nmap <silent> gd <Plug>(coc-definition)
@@ -99,6 +99,9 @@ nnoremap <silent> <space>e  :<C-u>CocList extensions<cr>
 nnoremap <silent> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
+
+" Prettier on save
+nnoremap <S-f> <cmd>Prettier<cr>
 
 " Telescope
 nnoremap <C-p> <cmd>Telescope find_files<cr>
